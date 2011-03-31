@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tryton>
+    <data noupdate="0">
+
+            <record model="ekd.account.type.template" id="type_msfo" >
+              <field name="name">Типы счетов для МСФО</field>
+              <field name="type_balance">active</field>
+              <field name="sequence">105</field>
+            </record>
+
+            <record model="ekd.account.type.template" id="account_type_receivable" >
+              <field name="name">Дебиторская задолженность</field>
+              <field name="code">receivable</field>
+              <field name="type_balance">active</field>
+              <field name="parent" ref="type_msfo"/>
+            </record>
+
+            <record model="ekd.account.type.template" id="account_type_payable" >
+              <field name="name">Платежи</field>
+              <field name="code">payable</field>
+              <field name="type_balance">active</field>
+              <field name="parent" ref="type_msfo"/>
+            </record>
+
+	    <record model="ekd.account.type.template" id="account_type_view">
+	      <field name="name">Вид</field>
+	      <field name="code">view</field>
+	      <field name="type_balance">active</field>
+              <field name="parent" ref="type_msfo"/>
+	    </record>
+
+	    <record model="ekd.account.type.template" id="account_type_income" >
+	      <field name="name">Поступления</field>
+	      <field name="code">income</field>
+	      <field name="type_balance">active</field>
+              <field name="parent" ref="type_msfo"/>
+	    </record>
+
+	    <record model="ekd.account.type.template" id="account_type_expense">
+	      <field name="name">Расход</field>
+	      <field name="code">expense</field>
+	      <field name="type_balance">active</field>
+              <field name="parent" ref="type_msfo"/>
+	    </record>
+
+	    <record model="ekd.account.type.template" id="account_type_tax">
+	      <field name="name">Налоги</field>
+	      <field name="code">tax</field>
+	      <field name="type_balance">active</field>
+              <field name="parent" ref="type_msfo"/>
+	    </record>
+
+	    <record model="ekd.account.type.template" id="account_type_cash">
+	      <field name="name">Денежные средства</field>
+	      <field name="code">cash</field>
+	      <field name="type_balance">active</field>
+              <field name="parent" ref="type_msfo"/>
+	    </record>
+
+	    <record model="ekd.account.type.template" id="account_type_asset">
+	      <field name="name">Активы</field>
+	      <field name="code">asset</field>
+	      <field name="type_balance">active</field>
+              <field name="parent" ref="type_msfo"/>
+	    </record>
+
+	    <record model="ekd.account.type.template" id="account_type_equity">
+	      <field name="name">Cобственный капитал</field>
+	      <field name="code">equity</field>
+	      <field name="type_balance">passive</field>
+              <field name="parent" ref="type_msfo"/>
+	    </record>
+
+	    <record model="ekd.account.type.template" id="account_type_liability">
+	      <field name="name">Обязательства (Долги)</field>
+	      <field name="code">liability</field>
+	      <field name="type_balance">passive</field>
+              <field name="parent" ref="type_msfo"/>
+	    </record>
+
+    </data>
+</tryton>

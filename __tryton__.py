@@ -16,8 +16,8 @@
         'ekd_account',
     ],
     'xml': [
-         'account_types.xml',
-         'account_chart.xml',
+         'xml/account_types.xml',
+         'xml/account_chart.xml',
     ],
     'translation': [
 #        'fr_FR.csv',

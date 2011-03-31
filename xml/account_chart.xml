@@ -1,0 +1,1640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tryton>
+    <data noupdate="0">
+
+        <!-- Корневой заголовок для счета -->
+        <record id="a0000" model="ekd.account.template">
+            <field name="name">План счетов МСФО</field>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <!-- Основные статьи плана счетов -->
+
+        <record id="a1xxx" model="ekd.account.template">
+            <field name="code">1</field>
+            <field name="name">ВНЕОБОРОТНЫЕ АКТИВЫ</field>
+            <field ref="a0000" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+        <record id="a2xxx" model="ekd.account.template">
+            <field name="code">2</field>
+            <field name="name">ОБОРОТНЫЕ АКТИВЫ</field>
+            <field ref="a0000" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+        <record id="a3xxx" model="ekd.account.template">
+            <field name="code">3</field>
+            <field name="name">СОБСТВЕННЫЙ КАПИТАЛ</field>
+            <field ref="a0000" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+        <record id="a4xxx" model="ekd.account.template">
+            <field name="code">4</field>
+            <field name="name">ДОЛГОСРОЧНЫЕ ОБЯЗАТЕЛЬСТВА</field>
+            <field ref="a0000" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+        <record id="a5xxx" model="ekd.account.template">
+            <field name="code">5</field>
+            <field name="name">КРАТКОСРОЧНЫЕ ОБЯЗАТЕЛЬСТВА</field>
+            <field ref="a0000" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+        <record id="a6xxx" model="ekd.account.template">
+            <field name="code">6</field>
+            <field name="name">ДОХОДЫ</field>
+            <field ref="a0000" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+        <record id="a7xxx" model="ekd.account.template">
+            <field name="code">7</field>
+            <field name="name">РАСХОДЫ</field>
+            <field ref="a0000" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+        <record id="a8xxx" model="ekd.account.template">
+            <field name="code">8</field>
+            <field name="name">СЧЕТА УПРАВЛЕНЧЕСКОГО УЧЕТА</field>
+            <field ref="a0000" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+        <record id="a9xxx" model="ekd.account.template">
+            <field name="code">9</field>
+            <field name="name">ЗАБАЛАНСОВЫЕ СЧЕТА</field>
+            <field ref="a0000" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <!--1 Внеоборотные активы - Fixed Assets -->
+        <record id="a11xx" model="ekd.account.template">
+            <field name="code">11</field>
+            <field name="name">НЕМАТЕРИАЛЬНЫЕ АКТИВЫ</field>
+            <field ref="a1xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a111x" model="ekd.account.template">
+            <field name="code">111</field>
+            <field name="name">Нематериальные активы</field>
+            <field ref="a11xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a112x" model="ekd.account.template">
+            <field name="code">112</field>
+            <field name="name">Амортизация нематериальных активов</field>
+            <field ref="a11xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a12xx" model="ekd.account.template">
+            <field name="code">12</field>
+            <field name="name">ДОЛГОСРОЧНЫЕ МАТЕРИАЛЬНЫЕ АКТИВЫ</field>
+            <field ref="a1xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a121x" model="ekd.account.template">
+            <field name="code">121</field>
+            <field name="name">Земельные участки и недвижимость</field>
+            <field ref="a12xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a122x" model="ekd.account.template">
+            <field name="code">122</field>
+            <field name="name">Износ земельных участков и недвижимости</field>
+            <field ref="a12xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a123x" model="ekd.account.template">
+            <field name="code">123</field>
+            <field name="name">Основные средства</field>
+            <field ref="a12xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a124x" model="ekd.account.template">
+            <field name="code">124</field>
+            <field name="name">Износ основных средств</field>
+            <field ref="a12xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a125x" model="ekd.account.template">
+            <field name="code">125</field>
+            <field name="name">Природные ресурсы</field>
+            <field ref="a12xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a126x" model="ekd.account.template">
+            <field name="code">126</field>
+            <field name="name">Истощение природных ресурсов</field>
+            <field ref="a12xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a13xx" model="ekd.account.template">
+            <field name="code">13</field>
+            <field name="name">ДОЛГОСРОЧНЫЕ ИНВЕСТИЦИИ</field>
+            <field ref="a1xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a131x" model="ekd.account.template">
+            <field name="code">131</field>
+            <field name="name">Долгосрочные инвестиции в несвязанные стороны</field>
+            <field ref="a13xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a132x" model="ekd.account.template">
+            <field name="code">132</field>
+            <field name="name">Долгосрочные инвестиции в связанные стороны</field>
+            <field ref="a13xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a133x" model="ekd.account.template">
+            <field name="code">133</field>
+            <field name="name">Изменение стоимости долгосрочных инвестиций</field>
+            <field ref="a13xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a14xx" model="ekd.account.template">
+            <field name="code">14</field>
+            <field name="name">ОТСРОЧЕННЫЕ АКТИВЫ ПО НАЛОГУ НА ПРИБЫЛЬ</field>
+            <field ref="a1xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a141x" model="ekd.account.template">
+            <field name="code">141</field>
+            <field name="name">Отсроченные активы по налогу на прибыль</field>
+            <field ref="a14xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a15xx" model="ekd.account.template">
+            <field name="code">15</field>
+            <field name="name">ПРОЧИЕ ВНЕОБОРОТНЫЕ АКТИВЫ</field>
+            <field ref="a1xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a152x" model="ekd.account.template">
+            <field name="code">152</field>
+            <field name="name">Долгосрочная дебиторская задолженность</field>
+            <field ref="a15xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a153x" model="ekd.account.template">
+            <field name="code">153</field>
+            <field name="name">Долгосрочные авансы выданные</field>
+            <field ref="a15xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a154x" model="ekd.account.template">
+            <field name="code">154</field>
+            <field name="name">Долгосрочные расходы будущих периодов</field>
+            <field ref="a15xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a155x" model="ekd.account.template">
+            <field name="code">155</field>
+            <field name="name">Прочие долгосрочные активы</field>
+            <field ref="a15xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <!--2 Оборотные активы - Current assets -->
+
+        <record id="a21xx" model="ekd.account.template">
+            <field name="code">21</field>
+            <field name="name">ТОВАРНО-МАТЕРИАЛЬНЫЕ ЗАПАСЫ</field>
+            <field ref="a2xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a211x" model="ekd.account.template">
+            <field name="code">211</field>
+            <field name="name">Сырье и материалы</field>
+            <field ref="a21xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a212x" model="ekd.account.template">
+            <field name="code">212</field>
+            <field name="name">Незавершенное производство</field>
+            <field ref="a21xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a213x" model="ekd.account.template">
+            <field name="code">213</field>
+            <field name="name">Готовая продукция</field>
+            <field ref="a21xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a214x" model="ekd.account.template">
+            <field name="code">214</field>
+            <field name="name">Товары</field>
+            <field ref="a21xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a22xx" model="ekd.account.template">
+            <field name="code">22</field>
+            <field name="name">НЕЗАВЕРШЕННОЕ СТРОИТЕЛЬСТВО</field>
+            <field ref="a2xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a221x" model="ekd.account.template">
+            <field name="code">221</field>
+            <field name="name">Незавершенное строительство по договорам подряда</field>
+            <field ref="a22xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a23xx" model="ekd.account.template">
+            <field name="code">23</field>
+            <field name="name">КРАТКОСРОЧНАЯ ДЕБИТОРСКАЯ ЗАДОЛЖЕННОСТЬ</field>
+            <field ref="a2xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a231x" model="ekd.account.template">
+            <field name="code">231</field>
+            <field name="name">Расчеты с заказчиками и покупателями</field>
+            <field ref="a23xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_receivable"/>
+        </record>
+
+        <record id="a232x" model="ekd.account.template">
+            <field name="code">232</field>
+            <field name="name">Резерв по сомнительным долгам</field>
+            <field ref="a23xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a233x" model="ekd.account.template">
+            <field name="code">233</field>
+            <field name="name">Краткосрочная дебиторская задолженность связанных сторон</field>
+            <field ref="a23xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a24xx" model="ekd.account.template">
+            <field name="code">24</field>
+            <field name="name">ПРОЧАЯ ДЕБИТОРСКАЯ ЗАДОЛЖЕННОСТЬ И ПРЕДОПЛАТА</field>
+            <field ref="a2xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a241x" model="ekd.account.template">
+            <field name="code">241</field>
+            <field name="name">Авансы выданные</field>
+            <field ref="a24xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a242x" model="ekd.account.template">
+            <field name="code">242</field>
+            <field name="name">Расходы будущих периодов</field>
+            <field ref="a24xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a243x" model="ekd.account.template">
+            <field name="code">243</field>
+            <field name="name">Расчеты с бюджетом</field>
+            <field ref="a24xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a2439" model="ekd.account.template">
+            <field name="code">2439</field>
+            <field name="name">Прочие расчеты с бюджетом</field>
+            <field ref="a243x" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a244x" model="ekd.account.template">
+            <field name="code">244</field>
+            <field name="name">НДС к возмещению</field>
+            <field ref="a24xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a245x" model="ekd.account.template">
+            <field name="code">245</field>
+            <field name="name">Расчеты с подотчетными лицами</field>
+            <field ref="a24xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_receivable"/>
+        </record>
+
+        <record id="a246x" model="ekd.account.template">
+            <field name="code">246</field>
+            <field name="name">Начисленные доходы</field>
+            <field ref="a24xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a247x" model="ekd.account.template">
+            <field name="code">247</field>
+            <field name="name">Займы выданные</field>
+            <field ref="a24xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_asset"/>
+        </record>
+
+        <record id="a248x" model="ekd.account.template">
+            <field name="code">248</field>
+            <field name="name">Прочая дебиторская задолженность</field>
+            <field ref="a24xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_receivable"/>
+        </record>
+
+        <record id="a25xx" model="ekd.account.template">
+            <field name="code">25</field>
+            <field name="name">КРАТКОСРОЧНЫЕ ИНВЕСТИЦИИ</field>
+            <field ref="a2xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a251x" model="ekd.account.template">
+            <field name="code">251</field>
+            <field name="name">Краткосрочные инвестиции в несвязанные стороны</field>
+            <field ref="a25xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a252x" model="ekd.account.template">
+            <field name="code">252</field>
+            <field name="name">Краткосрочные инвестиции в связанные стороны</field>
+            <field ref="a25xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a253x" model="ekd.account.template">
+            <field name="code">253</field>
+            <field name="name">Изменение стоимости краткосрочных инвестиций</field>
+            <field ref="a25xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a26xx" model="ekd.account.template">
+            <field name="code">26</field>
+            <field name="name">ДЕНЕЖНЫЕ СРЕДСТВА И ЭКВИВАЛЕНТЫ</field>
+            <field ref="a2xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a261x" model="ekd.account.template">
+            <field name="code">261</field>
+            <field name="name">Касса</field>
+            <field ref="a26xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_cash"/>
+        </record>
+
+        <record id="a262x" model="ekd.account.template">
+            <field name="code">262</field>
+            <field name="name">Расчетный счет</field>
+            <field ref="a26xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_cash"/>
+        </record>
+
+        <record id="a263x" model="ekd.account.template">
+            <field name="code">263</field>
+            <field name="name">Валютный счет</field>
+            <field ref="a26xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_cash"/>
+        </record>
+
+        <record id="a264x" model="ekd.account.template">
+            <field name="code">264</field>
+            <field name="name">Специальные счета в банках</field>
+            <field ref="a26xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_cash"/>
+        </record>
+
+        <record id="a265x" model="ekd.account.template">
+            <field name="code">265</field>
+            <field name="name">Денежные переводы в пути</field>
+            <field ref="a26xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_cash"/>
+        </record>
+
+        <record id="a27xx" model="ekd.account.template">
+            <field name="code">27</field>
+            <field name="name">ПРОЧИЕ ТЕКУЩИЕ АКТИВЫ</field>
+            <field ref="a2xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a272x" model="ekd.account.template">
+            <field name="code">272</field>
+            <field name="name">Прочие текущие активы</field>
+            <field ref="a27xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <!--3 Капитал - Capital -->
+
+        <record id="a31xx" model="ekd.account.template">
+            <field name="code">31</field>
+            <field name="name">УСТАВНЫЙ И ДОБАВОЧНЫЙ КАПИТАЛ</field>
+            <field ref="a3xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a311x" model="ekd.account.template">
+            <field name="code">311</field>
+            <field name="name">Уставный капитал</field>
+            <field ref="a31xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_equity"/>
+        </record>
+
+        <record id="a312x" model="ekd.account.template">
+            <field name="code">312</field>
+            <field name="name">Эмиссионный доход</field>
+            <field ref="a31xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a313x" model="ekd.account.template">
+            <field name="code">313</field>
+            <field name="name">Неоплаченный капитал</field>
+            <field ref="a31xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a314x" model="ekd.account.template">
+            <field name="code">314</field>
+            <field name="name">Собственные выкупленные акции</field>
+            <field ref="a31xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a32xx" model="ekd.account.template">
+            <field name="code">32</field>
+            <field name="name">РЕЗЕРВНЫЙ КАПИТАЛ</field>
+            <field ref="a3xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a321x" model="ekd.account.template">
+            <field name="code">321</field>
+            <field name="name">Переоценка долгосрочных активов</field>
+            <field ref="a32xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a322x" model="ekd.account.template">
+            <field name="code">322</field>
+            <field name="name">Курсовая разница по инвестициям в дочерние предприятия</field>
+            <field ref="a32xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a323x" model="ekd.account.template">
+            <field name="code">323</field>
+            <field name="name">Субсидии государственным предприятиям</field>
+            <field ref="a32xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a33xx" model="ekd.account.template">
+            <field name="code">33</field>
+            <field name="name">НЕРАСПРЕДЕЛЕННАЯ ПРИБЫЛЬ</field>
+            <field ref="a3xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a331x" model="ekd.account.template">
+            <field name="code">331</field>
+            <field name="name">Нераспределенная прибыль (убыток) прошлых лет</field>
+            <field ref="a33xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a332x" model="ekd.account.template">
+            <field name="code">332</field>
+            <field name="name">Поправка результатов прошлых лет</field>
+            <field ref="a33xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a333x" model="ekd.account.template">
+            <field name="code">333</field>
+            <field name="name">Чистая прибыль отчетного года</field>
+            <field ref="a33xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a334x" model="ekd.account.template">
+            <field name="code">334</field>
+            <field name="name">Объявленные дивиденды</field>
+            <field ref="a33xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <!--4 Долгосрочные обязательства - Long-term liabilities -->
+
+        <record id="a41xx" model="ekd.account.template">
+            <field name="code">41</field>
+            <field name="name">ДОЛГОСРОЧНЫЕ ФИНАНСОВЫЕ ОБЯЗАТЕЛЬСТВА</field>
+            <field ref="a4xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a411x" model="ekd.account.template">
+            <field name="code">411</field>
+            <field name="name">Долгосрочные займы</field>
+            <field ref="a41xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_liability"/>
+        </record>
+
+        <record id="a412x" model="ekd.account.template">
+            <field name="code">412</field>
+            <field name="name">Прочие долгосрочные финансовые обязательств</field>
+            <field ref="a41xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_liability"/>
+        </record>
+
+        <record id="a42xx" model="ekd.account.template">
+            <field name="code">42</field>
+            <field name="name">ОТСРОЧЕННЫЕ ОБЯЗАТЕЛЬСТВА ПО НАЛОГУ НА ПРИБЫЛЬ</field>
+            <field ref="a4xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a421x" model="ekd.account.template">
+            <field name="code">421</field>
+            <field name="name">Отсроченные обязательства по налогу на прибыль</field>
+            <field ref="a42xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_liability"/>
+        </record>
+
+        <record id="a43xx" model="ekd.account.template">
+            <field name="code">43</field>
+            <field name="name">ПРОЧИЕ ДОЛГОСРОЧНЫЕ ОБЯЗАТЕЛЬСТВА</field>
+            <field ref="a4xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a431x" model="ekd.account.template">
+            <field name="code">431</field>
+            <field name="name">Долгосрочные доходы будущих периодов</field>
+            <field ref="a43xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a432x" model="ekd.account.template">
+            <field name="code">432</field>
+            <field name="name">Долгосрочные авансы полученные</field>
+            <field ref="a43xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a433xx" model="ekd.account.template">
+            <field name="code">433</field>
+            <field name="name">Прочие долгосрочные начисленные обязательства</field>
+            <field ref="a43xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <!--5 Краткосрочные обязательства - Current liabilities -->
+
+        <record id="a51xx" model="ekd.account.template">
+            <field name="code">51</field>
+            <field name="name">КРАТКОСРОЧНЫЕ ФИНАНСОВЫЕ ОБЯЗАТЕЛЬСТВА</field>
+            <field ref="a5xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a511x" model="ekd.account.template">
+            <field name="code">511</field>
+            <field name="name">Краткосрочные займы</field>
+            <field ref="a51xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a512x" model="ekd.account.template">
+            <field name="code">512</field>
+            <field name="name">Текущая доля долгосрочных обязательств</field>
+            <field ref="a51xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a513x" model="ekd.account.template">
+            <field name="code">513</field>
+            <field name="name">Прочие краткосрочные финансовые обязательства</field>
+            <field ref="a51xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a52xx" model="ekd.account.template">
+            <field name="code">52</field>
+            <field name="name">КРАТКОСРОЧНЫЕ КРЕДИТОРСКАЯ ЗАДОЛЖЕННОСТЬ</field>
+            <field ref="a5xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a521x" model="ekd.account.template">
+            <field name="code">521</field>
+            <field name="name">Расчеты с поставщиками и подрядчиками</field>
+            <field ref="a52xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_payable"/>
+        </record>
+
+        <record id="a522x" model="ekd.account.template">
+            <field name="code">522</field>
+            <field name="name">Краткосрочные обязательства связанным сторонам</field>
+            <field ref="a52xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a53xx" model="ekd.account.template">
+            <field name="code">53</field>
+            <field name="name">КРАТКОСРОЧНЫЕ НАЧИСЛЕННЫЕ ОБЯЗАТЕЛЬСТВА</field>
+            <field ref="a5xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a531x" model="ekd.account.template">
+            <field name="code">531</field>
+            <field name="name">Расчеты по заработной плате</field>
+            <field ref="a53xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_liability"/>
+        </record>
+
+        <record id="a532x" model="ekd.account.template">
+            <field name="code">532</field>
+            <field name="name">Расчеты с подотчетными лицами</field>
+            <field ref="a53xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_liability"/>
+        </record>
+
+        <record id="a533x" model="ekd.account.template">
+            <field name="code">533</field>
+            <field name="name">Расчеты по налогам</field>
+            <field ref="a53xx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a5331" model="ekd.account.template">
+            <field name="code">5331</field>
+            <field name="name">Расчеты по налогам (НДФЛ)</field>
+            <field ref="a533x" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_tax"/>
+        </record>
+
+        <record id="a5332" model="ekd.account.template">
+            <field name="code">5332</field>
+            <field name="name">Расчеты по пенсионному обеспечению</field>
+            <field ref="a533x" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_tax"/>
+        </record>
+
+        <record id="a5333" model="ekd.account.template">
+            <field name="code">5333</field>
+            <field name="name">Расчеты по социальному страхованию</field>
+            <field ref="a533x" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_tax"/>
+        </record>
+
+        <record id="a5334" model="ekd.account.template">
+            <field name="code">5334</field>
+            <field name="name">Расчеты по обязательному медицинскому страхованию</field>
+            <field ref="a533x" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_tax"/>
+        </record>
+
+        <record id="a5339" model="ekd.account.template">
+            <field name="code">5339</field>
+            <field name="name">Расчеты по прочим налогам</field>
+            <field ref="a533x" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_tax"/>
+        </record>
+
+        <record id="a534x" model="ekd.account.template">
+            <field name="code">534</field>
+            <field name="name">Расчеты с учредителями</field>
+            <field ref="a53xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_liability"/>
+        </record>
+
+        <record id="a535x" model="ekd.account.template">
+            <field name="code">535</field>
+            <field name="name">Проценты, начисленные к оплате</field>
+            <field ref="a53xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_liability"/>
+        </record>
+
+        <record id="a536x" model="ekd.account.template">
+            <field name="code">536</field>
+            <field name="name">Резервы предстоящих расходов и платежей</field>
+            <field ref="a53xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_liability"/>
+        </record>
+
+        <record id="a54xx" model="ekd.account.template">
+            <field name="code">54</field>
+            <field name="name">ПРОЧИЕ КРАТКОСРОЧНЫЕ ОБЯЗАТЕЛЬСТВА</field>
+            <field ref="a5xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a541x" model="ekd.account.template">
+            <field name="code">541</field>
+            <field name="name">Краткосрочные авансы полученные</field>
+            <field ref="a54xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_liability"/>
+        </record>
+
+        <record id="a542x" model="ekd.account.template">
+            <field name="code">542</field>
+            <field name="name">Текущие доходы будущих периодов</field>
+            <field ref="a54xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_liability"/>
+        </record>
+
+        <record id="a543x" model="ekd.account.template">
+            <field name="code">543</field>
+            <field name="name">Прочие краткосрочные обязательства</field>
+            <field ref="a54xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_liability"/>
+        </record>
+
+        <!--6 Доходы - Revenues -->
+
+        <record id="a61xx" model="ekd.account.template">
+            <field name="code">61</field>
+            <field name="name">ДОХОДЫ ОТ ПРОДАЖ</field>
+            <field ref="a6xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a611x" model="ekd.account.template">
+            <field name="code">611</field>
+            <field name="name">Доходы от реализации готовой продукции</field>
+            <field ref="a61xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a612x" model="ekd.account.template">
+            <field name="code">612</field>
+            <field name="name">Доходы от реализации товаров</field>
+            <field ref="a61xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a613x" model="ekd.account.template">
+            <field name="code">613</field>
+            <field name="name">Доходы от реализации услуг</field>
+            <field ref="a61xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a64xx" model="ekd.account.template">
+            <field name="code">64</field>
+            <field name="name">ПРОЧИЕ ОПЕРАЦИОННЫЕ ДОХОДЫ</field>
+            <field ref="a6xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a641x" model="ekd.account.template">
+            <field name="code">641</field>
+            <field name="name">Доходы от реализации текущих активов</field>
+            <field ref="a64xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a642xx" model="ekd.account.template">
+            <field name="code">642</field>
+            <field name="name">Доходы от текущей аренды</field>
+            <field ref="a64xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a643x" model="ekd.account.template">
+            <field name="code">643</field>
+            <field name="name">Доходы в виде штрафов и пеней</field>
+            <field ref="a64xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a644x" model="ekd.account.template">
+            <field name="code">644</field>
+            <field name="name">Доходы от изменения метода оценки текущих активов</field>
+            <field ref="a64xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a645x" model="ekd.account.template">
+            <field name="code">645</field>
+            <field name="name">Доходы от возмещения потерь</field>
+            <field ref="a64xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a646x" model="ekd.account.template">
+            <field name="code">646</field>
+            <field name="name">Прочие операционные доходы</field>
+            <field ref="a64xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a65xx" model="ekd.account.template">
+            <field name="code">65</field>
+            <field name="name">ДОХОДЫ ОТ ИНВЕСТИЦИОННОЙ ДЕЯТЕЛЬНОСТИ</field>
+            <field ref="a6xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a651x" model="ekd.account.template">
+            <field name="code">651</field>
+            <field name="name">Доходы от выбытия нематериальных активов</field>
+            <field ref="a65xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a652x" model="ekd.account.template">
+            <field name="code">652</field>
+            <field name="name">Доходы от выбытия долгосрочных материальных активов</field>
+            <field ref="a65xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a653x" model="ekd.account.template">
+            <field name="code">653</field>
+            <field name="name">Доходы от выбытия долгосрочных финансовых активов</field>
+            <field ref="a65xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a654x" model="ekd.account.template">
+            <field name="code">654</field>
+            <field name="name">Дивиденды полученные</field>
+            <field ref="a65xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a655x" model="ekd.account.template">
+            <field name="code">655</field>
+            <field name="name">Проценты полученные</field>
+            <field ref="a65xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a656x" model="ekd.account.template">
+            <field name="code">656</field>
+            <field name="name">Доходы от операций со связанными сторонами</field>
+            <field ref="a65xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a657x" model="ekd.account.template">
+            <field name="code">657</field>
+            <field name="name">Прочие доходы от инвестиционной деятельности</field>
+            <field ref="a65xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a66xx" model="ekd.account.template">
+            <field name="code">66</field>
+            <field name="name">ДОХОДЫ ОТ ФИНАНСОВОЙ ДЕЯТЕЛЬНОСТИ</field>
+            <field ref="a6xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a661x" model="ekd.account.template">
+            <field name="code">661</field>
+            <field name="name">Роялти</field>
+            <field ref="a66xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a662x" model="ekd.account.template">
+            <field name="code">662</field>
+            <field name="name">Доходы от лизинга</field>
+            <field ref="a66xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a663x" model="ekd.account.template">
+            <field name="code">663</field>
+            <field name="name">Доходы от безвозмездно полученных активов</field>
+            <field ref="a66xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a664x" model="ekd.account.template">
+            <field name="code">664</field>
+            <field name="name">Доходы от грантов</field>
+            <field ref="a66xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a665x" model="ekd.account.template">
+            <field name="code">665</field>
+            <field name="name">Доходы от курсовых разниц</field>
+            <field ref="a66xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a666x" model="ekd.account.template">
+            <field name="code">666</field>
+            <field name="name">Прочие доходы от финансовой деятельности</field>
+            <field ref="a66xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a68xx" model="ekd.account.template">
+            <field name="code">68</field>
+            <field name="name">ЧРЕЗВЫЧАЙНЫЕ ДОХОДЫ</field>
+            <field ref="a6xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a681x" model="ekd.account.template">
+            <field name="code">681</field>
+            <field name="name">Компенсации, полученные для возмещения убытков от стихийных бедствий</field>
+            <field ref="a68xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <record id="a682x" model="ekd.account.template">
+            <field name="code">682</field>
+            <field name="name">Прочие чрезвычайные доходы</field>
+            <field ref="a68xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_income"/>
+        </record>
+
+        <!--7 Расходы - Expenses -->
+
+        <record id="a71xx" model="ekd.account.template">
+            <field name="code">71</field>
+            <field name="name">СЕБЕСТОИМОСТЬ ПРОДАЖ</field>
+            <field ref="a7xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a711x" model="ekd.account.template">
+            <field name="code">711</field>
+            <field name="name">Себестоимость реализованной готовой продукции</field>
+            <field ref="a71xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a712x" model="ekd.account.template">
+            <field name="code">712</field>
+            <field name="name">Себестоимость проданных товаров</field>
+            <field ref="a71xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a713x" model="ekd.account.template">
+            <field name="code">713</field>
+            <field name="name">Себестоимость оказанных услуг</field>
+            <field ref="a71xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a72xx" model="ekd.account.template">
+            <field name="code">72</field>
+            <field name="name">КОММЕРЧЕСКИЕ РАСХОДЫ</field>
+            <field ref="a7xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a721x" model="ekd.account.template">
+            <field name="code">721</field>
+            <field name="name">Расходы на маркетинг</field>
+            <field ref="a72xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a722x" model="ekd.account.template">
+            <field name="code">722</field>
+            <field name="name">Расходы на рекламу</field>
+            <field ref="a72xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a723x" model="ekd.account.template">
+            <field name="code">723</field>
+            <field name="name">Расходы на упаковку</field>
+            <field ref="a72xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a724x" model="ekd.account.template">
+            <field name="code">724</field>
+            <field name="name">Транспортные расходы по сбыту</field>
+            <field ref="a72xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a725x" model="ekd.account.template">
+            <field name="code">725</field>
+            <field name="name">Гарантийный ремонт</field>
+            <field ref="a72xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a726x" model="ekd.account.template">
+            <field name="code">726</field>
+            <field name="name">Расходы по сомнительным долгам</field>
+            <field ref="a72xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a727x" model="ekd.account.template">
+            <field name="code">727</field>
+            <field name="name">Расходы по возврату и снижению цен</field>
+            <field ref="a72xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a728x" model="ekd.account.template">
+            <field name="code">728</field>
+            <field name="name">Прочие коммерческие расходы</field>
+            <field ref="a72xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a73xx" model="ekd.account.template">
+            <field name="code">73</field>
+            <field name="name">ОБЩИЕ И АДМИНИСТРАТИВНЫЕ РАСХОДЫ</field>
+            <field ref="a7xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a731x" model="ekd.account.template">
+            <field name="code">731</field>
+            <field name="name">Амортизация основных средств</field>
+            <field ref="a73xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a732x" model="ekd.account.template">
+            <field name="code">732</field>
+            <field name="name">Амортизация нематериальных активов</field>
+            <field ref="a73xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a733x" model="ekd.account.template">
+            <field name="code">733</field>
+            <field name="name">Зарплата адмистративного и хозяйственного персонала</field>
+            <field ref="a73xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a734x" model="ekd.account.template">
+            <field name="code">734</field>
+            <field name="name">Социальные отчисления</field>
+            <field ref="a73xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a735x" model="ekd.account.template">
+            <field name="code">735</field>
+            <field name="name">Налоги, сборы и платежи (за исключением налога на прибыль)</field>
+            <field ref="a73xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a736x" model="ekd.account.template">
+            <field name="code">736</field>
+            <field name="name">Профессиональные услуги</field>
+            <field ref="a73xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a737x" model="ekd.account.template">
+            <field name="code">737</field>
+            <field name="name">Представительские и командировочные расходы</field>
+            <field ref="a73xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a738x" model="ekd.account.template">
+            <field name="code">738</field>
+            <field name="name">Офисные расходы, расходы на связь</field>
+            <field ref="a73xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a739x" model="ekd.account.template">
+            <field name="code">739</field>
+            <field name="name">Прочие общие и административные расходы</field>
+            <field ref="a73xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a74xx" model="ekd.account.template">
+            <field name="code">74</field>
+            <field name="name">ПРОЧИЕ ОПЕРАЦИОННЫЕ РАСХОДЫ</field>
+            <field ref="a7xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a741x" model="ekd.account.template">
+            <field name="code">741</field>
+            <field name="name">Расходы по реализации текущих активов</field>
+            <field ref="a74xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a742x" model="ekd.account.template">
+            <field name="code">742</field>
+            <field name="name">Расходы по текущей аренде</field>
+            <field ref="a74xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a743x" model="ekd.account.template">
+            <field name="code">743</field>
+            <field name="name">Расходы по штрафам и пеням</field>
+            <field ref="a74xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a744x" model="ekd.account.template">
+            <field name="code">744</field>
+            <field name="name">Расходы от изменения методов оценки текущих активов</field>
+            <field ref="a74xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a745x" model="ekd.account.template">
+            <field name="code">745</field>
+            <field name="name">Расходы по процентам на кредиты и займы</field>
+            <field ref="a74xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a746x" model="ekd.account.template">
+            <field name="code">746</field>
+            <field name="name">Нераспределенные косвенные производственные расходы</field>
+            <field ref="a74xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a747x" model="ekd.account.template">
+            <field name="code">747</field>
+            <field name="name">Недостачи и потери</field>
+            <field ref="a74xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a748x" model="ekd.account.template">
+            <field name="code">748</field>
+            <field name="name">Прочие операционные расходы</field>
+            <field ref="a74xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a75xx" model="ekd.account.template">
+            <field name="code">75</field>
+            <field name="name">РАСХОДЫ ПО ИНВЕСТИЦИОННОЙ ДЕЯТЕЛЬНОСТИ</field>
+            <field ref="a7xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a751x" model="ekd.account.template">
+            <field name="code">751</field>
+            <field name="name">Расходы по выбытию нематериальных активов</field>
+            <field ref="a75xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a752x" model="ekd.account.template">
+            <field name="code">752</field>
+            <field name="name">Расходы по выбытию долгосрочных материальных активов</field>
+            <field ref="a75xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a753x" model="ekd.account.template">
+            <field name="code">753</field>
+            <field name="name">Расходы по выбытию долгосрочных финансовых активов</field>
+            <field ref="a75xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a754x" model="ekd.account.template">
+            <field name="code">754</field>
+            <field name="name">Расходы по операциям со связанными сторонами</field>
+            <field ref="a75xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a755x" model="ekd.account.template">
+            <field name="code">755</field>
+            <field name="name">Прочие инвестиционные расходы</field>
+            <field ref="a75xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a76xx" model="ekd.account.template">
+            <field name="code">76</field>
+            <field name="name">РАСХОДЫ ПО ФИНАНСОВОЙ ДЕЯТЕЛЬНОСТ</field>
+            <field ref="a7xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a761x" model="ekd.account.template">
+            <field name="code">761</field>
+            <field name="name">Расходы по роялти</field>
+            <field ref="a76xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a762x" model="ekd.account.template">
+            <field name="code">762</field>
+            <field name="name">Расходы по лизингу</field>
+            <field ref="a76xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a763x" model="ekd.account.template">
+            <field name="code">763</field>
+            <field name="name">Расходы по курсовым разницам</field>
+            <field ref="a76xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a764x" model="ekd.account.template">
+            <field name="code">764</field>
+            <field name="name">Прочие финансовые расходы</field>
+            <field ref="a76xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a77xx" model="ekd.account.template">
+            <field name="code">77</field>
+            <field name="name">РАСХОДЫ ПО НАЛОГУ НА ПРИБЫЛЬ</field>
+            <field ref="a7xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a771x" model="ekd.account.template">
+            <field name="code">771</field>
+            <field name="name">Налог на прибыль</field>
+            <field ref="a77xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_tax"/>
+        </record>
+
+        <record id="a78xx" model="ekd.account.template">
+            <field name="code">78</field>
+            <field name="name">ЧРЕЗВЫЧАЙНЫЕ УБЫТКИ</field>
+            <field ref="a7xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a781x" model="ekd.account.template">
+            <field name="code">781</field>
+            <field name="name">Убытки от стихийных бедствий</field>
+            <field ref="a78xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a782x" model="ekd.account.template">
+            <field name="code">782</field>
+            <field name="name">Прочие чрезвычайные расходы</field>
+            <field ref="a78xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <!--8 Счета управленческого учета - Account Management Accounting -->
+
+        <record id="a81xx" model="ekd.account.template">
+            <field name="code">81</field>
+            <field name="name">ПРЯМЫЕ МАТЕРИАЛЬНЫЕ ЗАТРАТЫ</field>
+            <field ref="a8xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a811x" model="ekd.account.template">
+            <field name="code">811</field>
+            <field name="name">Расход сырья и материалов</field>
+            <field ref="a81xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a82xx" model="ekd.account.template">
+            <field name="code">82</field>
+            <field name="name">ПРЯМЫЕ ЗАТРАТЫ НА ОПЛАТУ ТРУДА</field>
+            <field ref="a8xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a821x" model="ekd.account.template">
+            <field name="code">821</field>
+            <field name="name">Прямые затраты на оплату труда</field>
+            <field ref="a82xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a822x" model="ekd.account.template">
+            <field name="code">822</field>
+            <field name="name">Социальные отчисления</field>
+            <field ref="a82xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a83xx" model="ekd.account.template">
+            <field name="code">83</field>
+            <field name="name">ПРЯМЫЕ НАКЛАДНЫЕ ПРОИЗВОДСТВЕННЫЕ ЗАТРАТЫ</field>
+            <field ref="a8xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a831x" model="ekd.account.template">
+            <field name="code">831</field>
+            <field name="name">Накладные производственные затраты</field>
+            <field ref="a83xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a84xx" model="ekd.account.template">
+            <field name="code">84</field>
+            <field name="name">КОСВЕННЫЕ ПРОИЗВОДСТВЕННЫЕ ЗАТРАТЫ</field>
+            <field ref="a8xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a841x" model="ekd.account.template">
+            <field name="code">841</field>
+            <field name="name">Износ, ремонт и содержание основных средств</field>
+            <field ref="a84xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a842x" model="ekd.account.template">
+            <field name="code">842</field>
+            <field name="name">Амортизация нематериальных активов</field>
+            <field ref="a84xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a843x" model="ekd.account.template">
+            <field name="code">843</field>
+            <field name="name">Зарплата управленческого и обслуживающего персонала</field>
+            <field ref="a84xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a844x" model="ekd.account.template">
+            <field name="code">844</field>
+            <field name="name">Социальные отчисления</field>
+            <field ref="a84xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a845x" model="ekd.account.template">
+            <field name="code">845</field>
+            <field name="name">Командировочные расходы</field>
+            <field ref="a84xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a846x" model="ekd.account.template">
+            <field name="code">846</field>
+            <field name="name">Прочие косвенные производственные затраты</field>
+            <field ref="a84xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <record id="a85xx" model="ekd.account.template">
+            <field name="code">85</field>
+            <field name="name">ДРУГИЕ СЧЕТА УПРАВЛЕНЧЕСКОГО УЧЕТА</field>
+            <field ref="a8xxx" name="parent"/>
+            <field name="kind">view</field>
+            <field name="type" ref="account_type_view"/>
+        </record>
+
+        <record id="a851x" model="ekd.account.template">
+            <field name="code">851</field>
+            <field name="name">Прочие счета управленческого учета</field>
+            <field ref="a85xx" name="parent"/>
+            <field name="kind">balance</field>
+            <field name="type" ref="account_type_expense"/>
+        </record>
+
+        <!--9 Забалансовые счета - Off-balance sheet accounts -->
+
+    </data>
+</tryton>
